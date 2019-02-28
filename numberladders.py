@@ -20,18 +20,18 @@ def simpleNumbers():
 
 
 def findMissingLetter():
-    alphabet = [chr(c) for c in range(97,123)]
+    alphabet = [chr(c) for c in list(range(97,123))]
     missingletterindex = randint(0,25)
     missingletter = alphabet[missingletterindex]
     alphabet[missingletterindex] = '?'
-    print "".join(alphabet)
-
-    guessed_letter = raw_input('Guess the missing letter :')
+    s=" "
+    print (s.join(alphabet))
+    guessed_letter = input('Guess the missing letter :')
     if guessed_letter in missingletter:
-        print "Well done, you guessed correctly"
+       print ("Well done, you guessed correctly")
         return True
     else:
-        print "Sorry, you guessed incorrectly"
+        print ("Sorry, you guessed incorrectly")
         return False
 
 
@@ -44,9 +44,9 @@ if __name__ == '__main__':
         givepoint = findMissingLetter()
         if givepoint:
             points += 1
-        print "You have %d points." % points
+        print ("You have %d points." % points)
 
-    print "Well done you have all the points!"
+    print ("Well done you have all the points!")
     sys.exit(0)
 
 
